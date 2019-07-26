@@ -63,7 +63,7 @@ export default class Blackjack extends React.Component {
             message: null
           });
         } else {
-          this.setState({ message: 'Game over! You are broke! Please start a new game.' });
+          this.setState({ message: 'Hết tiền cmnr! nhấn Bắt đầu chơi để chơi lại' });
         }
       } else {
         const deck = this.generateDeck();
@@ -94,9 +94,9 @@ export default class Blackjack extends React.Component {
       const currentBet = this.state.inputValue;
   
       if (currentBet > this.state.wallet) {
-        this.setState({ message: 'Insufficient funds to bet that amount.' });
+        this.setState({ message: 'Không đủ tiền!' });
       } else if (currentBet % 1 !== 0) {
-        this.setState({ message: 'Please bet whole numbers only.' });
+        this.setState({ message: 'Đặt số chẵn thôi!!!' });
       } else {
         // Deduct current bet from wallet
         const wallet = this.state.wallet - currentBet;
@@ -113,15 +113,15 @@ export default class Blackjack extends React.Component {
           player.count = this.getCount(player.cards);
   
           if (player.count > 21) {
-            this.setState({ player, gameOver: true, message: 'BUST!' });
+            this.setState({ player, gameOver: true, message: 'Ngoác cmnr!' });
           } else {
             this.setState({ deck: updatedDeck, player });
           }
         } else {
-          this.setState({ message: 'Please place bet.' });
+          this.setState({ message: 'Đặt cược đê.' });
         }
       } else {
-        this.setState({ message: 'Game over! Please start a new game.' });
+        this.setState({ message: 'Hết tiền cmnr! nhấn bắt đầu chơi để chơi lại.' });
       }
     }
     
@@ -179,7 +179,7 @@ export default class Blackjack extends React.Component {
             dealer,
             wallet: this.state.wallet + this.state.currentBet * 2,
             gameOver: true,
-            message: 'Dealer bust! You win!'
+            message: 'Cái ngoác cmnr! Bạn thắng'
           });
         } else {
           const winner = this.getWinner(dealer, this.state.player);
@@ -187,10 +187,10 @@ export default class Blackjack extends React.Component {
           let message;
           
           if (winner === 'dealer') {
-            message = 'Dealer wins...';
+            message = 'Máy thắnng...';
           } else if (winner === 'player') {
             wallet += this.state.currentBet * 2;
-            message = 'You win!';
+            message = 'Chúc mừng! Bạn đã thắng';
           } else {
             wallet += this.state.currentBet;
             message = 'Push.';
@@ -205,7 +205,7 @@ export default class Blackjack extends React.Component {
           });
         } 
       } else {
-        this.setState({ message: 'Game over! Please start a new game.' });
+        this.setState({ message: 'Thua cmnr! .' });
       }
     }
     
@@ -257,32 +257,38 @@ export default class Blackjack extends React.Component {
   
       return (
         <>
-          <h2 style={{textAlign:'center'}}>BLACK JACK</h2>
+        <div className="main-card" style={{marginTop: '3rem'}}>
+        <h1 className="header" style={{textAlign:'center'}}>Xì dách</h1>
+          <div className="row">
+        <div className="col-md-6">
           <div className="buttons">
-            <button className="btn btn-outline-success" onClick={() => {this.startNewGame()}}>New Game</button>
-            <button className="btn btn-outline-danger" onClick={() => {this.hit()}}>Hit</button>
-            <button className="btn btn-outline-primary" onClick={() => {this.stand()}}>Stand</button>
+            <button className="btn btn-outline-success" onClick={() => {this.startNewGame()}}>Bắt đầu chơi</button>
+            <button className="btn btn-outline-info" onClick={() => {this.hit()}}>Rút Bài</button>
+            <button className="btn btn-outline-primary" onClick={() => {this.stand()}}>Dừng</button>
           </div>
           
-          <p>Wallet: ${ this.state.wallet }</p>
+          <p>Tiền trong ví: ${ this.state.wallet }</p>
           {
             !this.state.currentBet ? 
             <div className="input-bet">            
               <form>
                 <input type="text" name="bet" placeholder="" value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
               </form>
-              <button className="btn btn-outline-dark" onClick={() => {this.placeBet()}}>Place Bet</button>
+              <button className="btn btn-outline-dark" onClick={() => {this.placeBet()}}>Đặt Cược</button>
             </div>
             : null
           }
           {
             this.state.gameOver ?
             <div className="buttons">
-              <button onClick={() => {this.startNewGame('continue')}}>Continue</button>
+              <button className="btn btn-outline-info" onClick={() => {this.startNewGame('continue')}}>Chơi tiếp</button>
             </div>
             : null
           }
-          <p>Your Hand ({ this.state.player.count })</p>
+          <p className="highlight">{ this.state.message }</p>
+          </div>
+          <div className="col-md-6">
+          <p>Bạn đang có { this.state.player.count } điểm</p>
           <table className="cards">
             <tr>
               { this.state.player.cards.map((card, i) => {
@@ -291,7 +297,7 @@ export default class Blackjack extends React.Component {
             </tr>
           </table>
           
-          <p>Dealer's Hand ({ this.state.dealer.count })</p>
+          <p style={{marginTop:'1.5rem'}}>Máy đang có { this.state.dealer.count } điểm</p>
           <table className="cards">
             <tr>
               { this.state.dealer.cards.map((card, i) => {
@@ -300,7 +306,10 @@ export default class Blackjack extends React.Component {
             </tr>
           </table>
           
-          <p>{ this.state.message }</p>
+          
+          </div>
+          </div>
+          </div>
         </>
       );
     }

@@ -31,8 +31,8 @@ export default class Xucxac extends React.Component {
   render() {
     return (
 
-      <>
-        <h1>Dice Roll</h1>
+      <div className="small-card">
+        <h1>Cục xì ngầu ông bê lắc</h1>
         <div className="buttons">
         {[1, 2, 3, 4, 5].map(number => {
             let text = number === 1? "die" : "dice";
@@ -57,7 +57,7 @@ export default class Xucxac extends React.Component {
             this.state.numberOfDice ? (
               
               <h2>
-                Roll Total: <span className="sum">{this.state.rollSum}</span>
+                Tổng điểm: <span className="sum">{this.state.rollSum}</span>
                 / {" "}
                 {this.state.numberOfDice * 6}
               </h2>
@@ -65,7 +65,7 @@ export default class Xucxac extends React.Component {
             ) : null
           }
            </div>   
-      </>
+      </div>
     );
   }
 }
