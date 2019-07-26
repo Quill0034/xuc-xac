@@ -1,0 +1,57 @@
+  
+  button {
+    margin: 0 10px 0 10px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card, .card-red {
+    height: 150px;
+    width: 100px;
+ 
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+    -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.3);
+ 
+
+
+  
+ 
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+  }
+  
+  .card-red {
+    color: red;
+  }
+  
+  .cards {
+    margin: 0 auto;
+  }
+  
+  .input-bet {
+    display: flex;
+    justify-content: center;
+  }

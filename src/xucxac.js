@@ -31,7 +31,7 @@ export default class Xucxac extends React.Component {
   render() {
     return (
 
-      <div className="container" style={{textAlign:'center'}}>
+      <>
         <h1>Dice Roll</h1>
         <div className="buttons">
         {[1, 2, 3, 4, 5].map(number => {
@@ -65,7 +65,7 @@ export default class Xucxac extends React.Component {
             ) : null
           }
            </div>   
-      </div>
+      </>
     );
   }
 }
