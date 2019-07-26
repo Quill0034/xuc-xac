@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/xuc-xac/static/css/main.72cfb290.chunk.css",
-    "main.js": "/xuc-xac/static/js/main.645ccb50.chunk.js",
-    "main.js.map": "/xuc-xac/static/js/main.645ccb50.chunk.js.map",
+    "main.css": "/xuc-xac/static/css/main.355f401b.chunk.css",
+    "main.js": "/xuc-xac/static/js/main.e10588b2.chunk.js",
+    "main.js.map": "/xuc-xac/static/js/main.e10588b2.chunk.js.map",
     "runtime~main.js": "/xuc-xac/static/js/runtime~main.aea45ac0.js",
     "runtime~main.js.map": "/xuc-xac/static/js/runtime~main.aea45ac0.js.map",
     "static/js/2.c2e19106.chunk.js": "/xuc-xac/static/js/2.c2e19106.chunk.js",
     "static/js/2.c2e19106.chunk.js.map": "/xuc-xac/static/js/2.c2e19106.chunk.js.map",
     "index.html": "/xuc-xac/index.html",
-    "precache-manifest.13fae202f4e043bfa7b8b347aae4a2fd.js": "/xuc-xac/precache-manifest.13fae202f4e043bfa7b8b347aae4a2fd.js",
+    "precache-manifest.8ba0455bc639e56aa09e1e920c61f60b.js": "/xuc-xac/precache-manifest.8ba0455bc639e56aa09e1e920c61f60b.js",
     "service-worker.js": "/xuc-xac/service-worker.js",
-    "static/css/main.72cfb290.chunk.css.map": "/xuc-xac/static/css/main.72cfb290.chunk.css.map"
+    "static/css/main.355f401b.chunk.css.map": "/xuc-xac/static/css/main.355f401b.chunk.css.map"
   }
 }
