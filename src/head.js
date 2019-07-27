@@ -1,13 +1,13 @@
 import React, { Component } from "react"; 
-import avatar from "./assets/avatar.jpg";
-export default class Head extends React.Component{
+
+export default class Head extends Component{
     render() {
       return (
         <>
         <header className="masthead bg-primary text-white text-center">
         <div className="container d-flex align-items-center flex-column">
         {/* Masthead Avatar Image */}
-        <img className="masthead-avatar mb-5" src={avatar} alt="" />
+        {/* <img className="masthead-avatar mb-5" src={avatar} alt="" /> */}
         {/* Masthead Heading */}
         <h1 className="masthead-heading text-uppercase mb-0 font-weight-bold">QUILL TRAN</h1>
         {/* Icon Divider */}

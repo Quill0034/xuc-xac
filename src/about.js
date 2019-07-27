@@ -6,7 +6,7 @@ export default class About extends React.Component{
         <section className="page-section bg-primary text-white mb-0" id="about">
         <div className="container">
           {/* About Section Heading */}
-          <h2 className="page-section-heading text-center text-uppercase text-white">About</h2>
+          <h2 className="page-section-heading text-center text-uppercase text-white">About Me</h2>
           {/* Icon Divider */}
           <div className="divider-custom divider-light">
             <div className="divider-custom-line" />

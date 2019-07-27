@@ -8,7 +8,7 @@ import six from "./assets/six.png";
 import React, { Component } from "react"; 
 import './style/App.css';
 
-export default class Xucxac extends React.Component {
+export default class Xucxac extends Component {
   state ={
     numberOfDice: null,
     rolls: [],
@@ -40,7 +40,7 @@ export default class Xucxac extends React.Component {
               <button
               key = {number}
               onClick = {() => this.diceRoll(number)}
-              className="button"
+              className="btn btn-success"
               >
                 {number} {text}
               </button>

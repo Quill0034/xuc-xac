@@ -27,6 +27,7 @@
     padding: 0.8rem;
   }
 
+
 @media (min-width:1200px) {
   #mainNav {
     padding-top: 1.5rem;
@@ -48,6 +49,7 @@
         color: white;
         background: primary;
       }
+
 #mainNav.navbar-shrink {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
