@@ -6,7 +6,7 @@ export default class Navigation extends React.Component{
   
         <nav className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         {/* <div className="container"> */}
-          <a className="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+          <a className="navbar-brand js-scroll-trigger" href="#page-top">QUILL TRAN</a>
           <button className="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu <i className="fas fa-bars hamburger"></i>
             <i className="fas fa-bars" />
