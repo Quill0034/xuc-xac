@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import './style/App.css'
 import './style/navigation.css';
 import './style/head.css';
+import './style/about.css';
 
 import Head from "./head";
+import About from "./about";
 import Xucxac from "./xucxac";
 import Blackjack from './blackjack';
 import Navigation from './navigation';
@@ -15,6 +17,7 @@ export default class App extends React.Component {
       <>
       <Navigation/>
       <Head/>
+      <About/>
       <div className="wrapper" style={{height: '100%'}}>
         {/* <Sidebar /> */}
         
