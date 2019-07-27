@@ -290,20 +290,24 @@ export default class Blackjack extends React.Component {
           <div className="col-md-6">
           <p>Bạn đang có { this.state.player.count } điểm</p>
           <table className="cards">
+            <tbody>
             <tr>
               { this.state.player.cards.map((card, i) => {
                 return <Card key={i} number={card.number} suit={card.suit}/>
               }) }
             </tr>
+            </tbody>
           </table>
           
           <p style={{marginTop:'1.5rem'}}>Máy đang có { this.state.dealer.count } điểm</p>
           <table className="cards">
+            <tbody>
             <tr>
               { this.state.dealer.cards.map((card, i) => {
                 return <Card key={i} number={card.number} suit={card.suit}/>;
               }) }
             </tr>
+            </tbody>
           </table>
           
           
