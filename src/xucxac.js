@@ -6,7 +6,7 @@ import five from "./assets/five.png";
 import six from "./assets/six.png";
 
 import React, { Component } from "react"; 
-import './App.css';
+import './style/App.css';
 
 export default class Xucxac extends React.Component {
   state ={

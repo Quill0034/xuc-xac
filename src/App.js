@@ -1,10 +1,12 @@
 import React, { Component } from "react"; 
-import './App.css';
-import './Sidebar.css';
+import './style/App.css'
+import './style/navigation.css';
+
+
 import Xucxac from "./xucxac";
 import Blackjack from './blackjack';
 import Navigation from './navigation';
-import Sidebar from './sidebar';
+
 export default class App extends React.Component {
 
   render() {
@@ -12,7 +14,7 @@ export default class App extends React.Component {
       <>
       <Navigation/>
       <div className="wrapper" style={{height: '100%'}}>
-        <Sidebar />
+        {/* <Sidebar /> */}
         
         <div className="container"  style={{marginTop: '5rem', width: '100%'}}>
         <div className="container" id="promo">

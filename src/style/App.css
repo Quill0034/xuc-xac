@@ -1,6 +1,8 @@
-
+#root {
+  font-family: Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
 .App {
-  font-family: 'Lucida Sans Unicode';
+
   background: #4CA1AF;
   background: -webkit-linear-gradient(to left, #4CA1AF , #C4E0E5);
   background: linear-gradient(to left, #4CA1AF , #C4E0E5);

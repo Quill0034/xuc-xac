@@ -1,6 +1,6 @@
 import React, { Component } from "react"; 
-import './blackjack.css';
-import './App.css';
+import './style/blackjack.css';
+import './style/App.css';
 export default class Blackjack extends React.Component {
     constructor(props) {
       super(props);
