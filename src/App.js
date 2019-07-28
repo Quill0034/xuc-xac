@@ -10,9 +10,6 @@ import Navigation from './navigation';
 import Head from "./head";
 import About from "./about";
 import Portfolio from "./portfolio";
-import Xucxac from "./xucxac";
-import Blackjack from './blackjack';
-import Flip from './flip';
 
 export default class App extends Component {
 
@@ -23,22 +20,8 @@ export default class App extends Component {
       <Head/>
       <About/>
       <Portfolio/>
-      <Flip/>
       <div className="wrapper" style={{height: '100%'}}>
-        {/* <Sidebar /> */}
-        
-        <div className="container"  style={{marginTop: '5rem', width: '100%'}}>
 
-        <div className="container" style={{textAlign:'center'}}>
-              <Xucxac/>
-        </div>
-        <div className="container" style={{textAlign:'center'}}>
-              <Blackjack/>
-              </div>
-
-     
-
-        </div>
       </div>
       </>
     );

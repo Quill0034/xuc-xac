@@ -19,9 +19,13 @@
       opacity: 0;
       background-color: fade-out(primary, .1);
 }
-
+#portfolio   .portfolio-item-caption:hover {
+    opacity: 1;
+    background: black;
+}
 #portfolio .portfolio-item-caption-content {
         font-size: 1.5rem;
+        
       }
 
 /* Styling for the portfolio modals */
@@ -29,7 +33,9 @@
     font-size: 2.25rem;
     line-height: 2rem;
 }
-
+.portfolio-modal  .modal-content {
+    height: 100%;
+}
 .portfolio-modal  .portfolio-modal-title.close {
     position: absolute;
     z-index: 1;

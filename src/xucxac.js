@@ -32,7 +32,6 @@ export default class Xucxac extends Component {
     return (
 
       <div className="small-card">
-        <h1>Cục xì ngầu ông bê lắc</h1>
         <div className="buttons">
         {[1, 2, 3, 4, 5].map(number => {
             let text = number === 1? "die" : "dice";

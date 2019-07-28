@@ -9,7 +9,7 @@ export default class Head extends Component{
         {/* Masthead Avatar Image */}
         {/* <img className="masthead-avatar mb-5" src={avatar} alt="" /> */}
         {/* Masthead Heading */}
-        <h1 className="masthead-heading text-uppercase mb-0 font-weight-bold">QUILL TRAN</h1>
+        <h1 className="masthead-heading text-uppercase mb-0 font-weight-bold">HI! MY NAME IS QUILL</h1>
         {/* Icon Divider */}
         <div className="divider-custom divider-light">
           <div className="divider-custom-line" />

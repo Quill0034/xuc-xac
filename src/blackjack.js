@@ -1,6 +1,7 @@
 import React, { Component } from "react"; 
 import './style/blackjack.css';
 import './style/App.css';
+import blackjack from "./assets/blackjack.jpg";
 export default class Blackjack extends Component {
     constructor(props) {
       super(props);
@@ -257,8 +258,7 @@ export default class Blackjack extends Component {
   
       return (
         <>
-        <div className="main-card" style={{marginTop: '3rem'}}>
-        <h1 className="header" style={{textAlign:'center'}}>Xì dách</h1>
+        <div>
           <div className="row">
         <div className="col-md-6">
           <div className="buttons">
@@ -272,7 +272,7 @@ export default class Blackjack extends Component {
             !this.state.currentBet ? 
             <div className="input-bet">            
               <form>
-                <input type="text" name="bet" placeholder="" value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
+                <input type="number" name="bet" placeholder="" value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
               </form>
               <button className="btn btn-outline-dark" onClick={() => {this.placeBet()}}>Đặt Cược</button>
             </div>
@@ -312,6 +312,49 @@ export default class Blackjack extends Component {
           
           
           </div>
+          <button className="portfolio-item mx-auto btn-info" data-toggle="modal" data-target="#rules">luật chơi</button>
+          <div className="portfolio-modal modal fade" id="rules" tabIndex={-1} role="dialog" aria-labelledby="rules" aria-hidden="true">
+            <div className="modal-dialog modal-xl" role="document">
+              <div className="modal-content"  >
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">
+                    <i className="fas fa-times" style={{position: 'relative',float: 'right', color: 'springgreen', fontSize: '4rem'}}/>
+                  </span>
+                </button>
+                <div className="modal-body text-center">
+                  <div className="container">
+                    <div className="row justify-content-center">
+                      <div className="col-lg-8">
+                        {/* Portfolio Modal - Title */}
+                        <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Luật Chơi</h2>
+                        {/* Icon Divider */}
+                        <div className="divider-custom">
+                          <div className="divider-custom-line" />
+                          <div className="divider-custom-icon">
+                            <i className="fas fa-star" />
+                          </div>
+                          <div className="divider-custom-line" />
+                        </div>
+                        {/* Portfolio Modal - Image */}
+                        <img className="img-fluid rounded mb-5" src={blackjack} alt="" />
+                        {/* Portfolio Modal - Text */}
+                        <p className="mb-5">Trò chơi blackjack được xử lý với sáu cỗ bài (để ngăn đếm thẻ) và sau mỗi ván bài (hoặc một số tay bài), các lá bài được xáo trộn lại.
+
+                          Nhà cái phải tiếp tục rút thẻ nếu giá trị của hai thẻ của anh ta là 17 điểm trở xuống, trong khi người chơi có thể dừng lại bất cứ lúc nào.
+
+                          Người chơi có thể chia các thẻ của mình khi xử lý các thẻ có cùng giá trị (ví dụ: 6-6 hoặc J-Q), nhân đôi cơ hội của mình để chơi ván bài cụ thể đó. Ách chia chỉ nhận được một thẻ bổ sung.
+                          </p>
+                        <button className="btn btn-primary mt-4" href="#" data-dismiss="modal">
+                          <i className="fas fa-times fa-fw" />
+                          Close Window
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
           </div>
           </div>
         </>

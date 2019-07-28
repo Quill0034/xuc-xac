@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import dice from "./assets/dice.png"; 
 import blackjack from "./assets/blackjack.jpg";
 import flip from "./assets/flip.png"; 
+
+import Xucxac from "./xucxac";
+import Blackjack from "./blackjack";
+import Flip from "./flip";
 export default class Portfolio extends Component{
     render() {
       return (
   
-        <section className="page-section portfolio" id="portfolio">
-        <div className="container">
+        <section className="page-section portfolio bg-light" id="portfolio">
+        <div className="container" style={{paddingTop: '2rem'}}>
           {/* Portfolio Section Heading */}
           <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
           {/* Icon Divider */}
@@ -57,6 +61,121 @@ export default class Portfolio extends Component{
           </div>
           {/* /.row */}
         </div>
+        {/* Modal 1 */}
+        <div className="portfolio-modal modal fade" id="portfolioModal1" tabIndex={-1} role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+        <div className="modal-dialog modal-xl" role="document">
+          <div className="modal-content"  >
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i className="fas fa-times" style={{position: 'relative',float: 'right', color: 'springgreen', fontSize: '4rem'}}/>
+              </span>
+            </button>
+            <div className="modal-body text-center">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-lg-8">
+                    {/* Portfolio Modal - Title */}
+                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Cục xì ngầu ông bê lắc</h2>
+                    {/* Icon Divider */}
+                    <div className="divider-custom">
+                      <div className="divider-custom-line" />
+                      <div className="divider-custom-icon">
+                        <i className="fas fa-star" />
+                      </div>
+                      <div className="divider-custom-line" />
+                    </div>
+                    {/* Portfolio Modal - Image */}
+                    <img className="img-fluid rounded mb-5" src={dice} alt="" />
+                    {/* Portfolio Modal - Text */}
+                    {/* <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> */}
+                    <Xucxac/>
+                    <button className="btn btn-primary mt-4" href="#" data-dismiss="modal">
+                      <i className="fas fa-times fa-fw" />
+                      Close Window
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Modal 2 */}
+      <div className="portfolio-modal modal fade" id="portfolioModal2" tabIndex={-1} role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+        <div className="modal-dialog modal-xl" role="document">
+          <div className="modal-content">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i className="fas fa-times" style={{position: 'relative',float: 'right', color: 'springgreen', fontSize: '4rem'}}/>
+              </span>
+            </button>
+            <div className="modal-body text-center">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-lg-8">
+                    {/* Portfolio Modal - Title */}
+                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Xì dách</h2>
+                    {/* Icon Divider */}
+                    <div className="divider-custom">
+                      <div className="divider-custom-line" />
+                      <div className="divider-custom-icon">
+                        <i className="fas fa-star" />
+                      </div>
+                      <div className="divider-custom-line" />
+                    </div>
+                    {/* Portfolio Modal - Image */}
+                    <img className="img-fluid rounded mb-5" src={blackjack} alt="" />
+                    {/* Portfolio Modal - Text */}
+                    <Blackjack/>
+                    <button className="btn btn-primary mt-4" href="#" data-dismiss="modal">
+                      <i className="fas fa-times fa-fw" />
+                      Close Window
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Modal 3 */}
+      <div className="portfolio-modal modal fade" id="portfolioModal3" tabIndex={-1} role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+        <div className="modal-dialog modal-xl" role="document">
+          <div className="modal-content">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i className="fas fa-times" style={{position: 'relative',float: 'right', color: 'springgreen', fontSize: '4rem'}}/>
+              </span>
+            </button>
+            <div className="modal-body text-center">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-lg-8">
+                    {/* Portfolio Modal - Title */}
+                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Tung đồng xu</h2>
+                    {/* Icon Divider */}
+                    <div className="divider-custom">
+                      <div className="divider-custom-line" />
+                      <div className="divider-custom-icon">
+                        <i className="fas fa-star" />
+                      </div>
+                      <div className="divider-custom-line" />
+                    </div>
+                    {/* Portfolio Modal - Image */}
+                    <img className="img-fluid rounded mb-5" src="img/portfolio/circus.png" alt="" />
+                    {/* Portfolio Modal - Text */}
+                    <Flip/>
+                    <button className="btn btn-primary mt-4" href="#" data-dismiss="modal">
+                      <i className="fas fa-times fa-fw" />
+                      Close Window
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </section>
       );
     }
