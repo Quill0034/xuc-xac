@@ -5,11 +5,13 @@ import './style/head.css';
 import './style/about.css';
 import './style/portfolio.css';
 import './style/flip.css';
+import './style/contact.css';
 
 import Navigation from './navigation';
 import Head from "./head";
 import About from "./about";
 import Portfolio from "./portfolio";
+import Contact from "./contact";
 
 export default class App extends Component {
 
@@ -20,6 +22,7 @@ export default class App extends Component {
       <Head/>
       <About/>
       <Portfolio/>
+      <Contact/>
       <div className="wrapper" style={{height: '100%'}}>
 
       </div>
