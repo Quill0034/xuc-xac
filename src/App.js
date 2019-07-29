@@ -6,12 +6,14 @@ import './style/about.css';
 import './style/portfolio.css';
 import './style/flip.css';
 import './style/contact.css';
+import './style/footer.css';
 
 import Navigation from './navigation';
 import Head from "./head";
 import About from "./about";
 import Portfolio from "./portfolio";
 import Contact from "./contact";
+import Footer from "./footer";
 
 export default class App extends Component {
 
@@ -23,11 +25,8 @@ export default class App extends Component {
       <About/>
       <Portfolio/>
       <Contact/>
-      <div className="scroll-to-top d-lg-none position-fixed ">
-        <a className="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-          <i className="fa fa-chevron-up" />
-        </a>
-      </div>
+      <Footer/>
+      
       </>
     );
   }

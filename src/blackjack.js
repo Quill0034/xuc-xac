@@ -227,7 +227,7 @@ export default class Blackjack extends Component {
     
     handleKeyDown(e) {
       const enter = 13;
-      console.log(e.keyCode);
+      // console.log(e.keyCode);
       
       if (e.keyCode === enter) {
         this.placeBet();
