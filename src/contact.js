@@ -4,10 +4,10 @@ export default class Contact extends Component{
     render() {
       return (
         <>
-        <section className="page-section" id="contact">
-        <div className="container" style={{marginTop: '50px', height:'80vh'}}>
+        <section className="page-section bg-light" id="contact"  >
+        <div className="container">
           {/* Contact Section Heading */}
-          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0 ">Contact Me</h2>
+          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0" style={{paddingTop: '50px'}}>Contact Me</h2>
           {/* Icon Divider */}
           <div className="divider-custom">
             <div className="divider-custom-line" />
@@ -20,27 +20,40 @@ export default class Contact extends Component{
           <div className="row">
             <div className="col-lg-8 mx-auto">
               {/* To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. */}
-              <form name="sentMessage" id="contactForm" noValidate="novalidate">
-              <div className="form-group">
-
-<div className="col-xs-6">
-    <label htmlFor="first_name"><h5>First Name</h5></label>
-    <input type="text" className="form-control" name="first_name" id="first_name" placeholder="Enter First Name" title="enter your first name if any." />
-</div>
-</div>
-<div className="form-group">
-
-<div className="col-xs-6">
-    <label htmlFor="last_name"><h5>Last Name</h5></label>
-    <input type="text" className="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" title="enter your last name if any." />
-</div>
-</div>
-<div className="form-group">
-<div className="col-xs-6">
-    <label htmlFor="phone"><h5>Date Of Birth</h5></label>
-    <input type="Date" className="form-control" />
-</div>
-</div>
+              <form name="sentMessage" id="contactForm">
+                <div className="control-group">
+                  <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label>Name</label>
+                    <input className="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                    <p className="help-block text-danger" />
+                  </div>
+                </div>
+                <div className="control-group">
+                  <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label>Email Address</label>
+                    <input className="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                    <p className="help-block text-danger" />
+                  </div>
+                </div>
+                <div className="control-group">
+                  <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label>Phone Number</label>
+                    <input className="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                    <p className="help-block text-danger" />
+                  </div>
+                </div>
+                <div className="control-group">
+                  <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label>Message</label>
+                    <textarea className="form-control" id="message" rows={5} placeholder="Message" required="required" data-validation-required-message="Please enter a message." defaultValue={""} />
+                    <p className="help-block text-danger" />
+                  </div>
+                </div>
+                <br />
+                <div id="success" />
+                <div className="form-group">
+                  <button type="submit" className="btn btn-primary btn-xl" id="sendMessageButton">Send &nbsp;<i className="far fa-paper-plane"></i></button>
+                </div>
               </form>
             </div>
           </div>

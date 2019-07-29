@@ -1,8 +1,9 @@
 import React, { Component } from "react"; 
+import ReactTimeout from 'react-timeout';
 import flip from "./assets/flip.png"; 
 import head from "./assets/head.png"; 
 import tail from "./assets/tail.png"; 
-export default class Flip extends Component{
+class Flip extends Component{
     constructor(props) {
         super(props);
         
@@ -14,28 +15,28 @@ export default class Flip extends Component{
       }
 
 
-    coinToss() {
+    coinToss = () => {
         // This function will randomly return either 'heads' or 'tails'.
         this.setState({ click: Math.random() });
     }
 
-      
+    handleClick = (e) => {
+        this.setState({ click: 0 })
+        this.props.setTimeout(this.coinToss, 500) // call the `toggle` function after 5000ms
+      }
       
     render() {
 
-        let appear ;
-        let disappear;
+        let appear = "appear";
+        let disappear = "disappear";
         let img;
 
-        if (this.state.click === 0){
-            appear = "appear";
-            disappear = "disappear";
-        }
-        else{
+        if (this.state.click !== 0){
             appear = "disappear";
             disappear = "appear";
         }
-        if ( this.state.click < 0.5) {        
+
+        if ( this.state.click < 0.5) { 
             img = <>
             <h1>Mặt ngửa</h1>
             <img src={head} alt="head"/>
@@ -47,8 +48,6 @@ export default class Flip extends Component{
             <img src={tail} alt="tail"/>
             </>
         }
-       
-    console.log(this.state.click); 
           
       return (
   
@@ -60,8 +59,9 @@ export default class Flip extends Component{
         </div>
         
         </div>
-        <button  onClick = {() => this.coinToss()} className="btn btn-success">click to flip the coin</button>
+        <button  onClick={this.handleClick} className="btn btn-success">click to flip the coin</button>
       </div>
       );
     }
 }
+export default ReactTimeout(Flip)

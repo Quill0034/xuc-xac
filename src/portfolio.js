@@ -11,9 +11,9 @@ export default class Portfolio extends Component{
       return (
   
         <section className="page-section portfolio bg-light" id="portfolio">
-        <div className="container" style={{paddingTop: '2rem'}}>
+        <div className="container" style={{paddingTop: '2rem', paddingBottom:'2rem'}}>
           {/* Portfolio Section Heading */}
-          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+          <h2 className="page-section-heading text-center text-uppercase mb-0">Portfolio</h2>
           {/* Icon Divider */}
           <div className="divider-custom">
             <div className="divider-custom-line" />

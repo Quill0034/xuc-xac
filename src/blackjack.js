@@ -258,7 +258,7 @@ export default class Blackjack extends Component {
   
       return (
         <>
-        <div>
+        <div id="blackjack">
           <div className="row">
         <div className="col-md-6">
           <div className="buttons">

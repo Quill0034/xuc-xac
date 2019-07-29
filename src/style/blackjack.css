@@ -3,26 +3,26 @@
     margin: 0 10px 0 10px;
   }
   
-  form {
+  .input-bet form {
     display: flex;
     justify-content: center;
   }
   
-  h1 {
+  #blackjack h1 {
     text-align: center;
     font-size: 50px;
   }
   
-  p {
+  #blackjack p {
     text-align: center;
   }
   
-  .buttons {
+  #blackjack .buttons {
     display: flex;
     justify-content: center;
   }
   
-  .card, .card-red {
+  #blackjack .card, .card-red {
     height: 150px;
     width: 100px;
     border-radius: 5px;
@@ -36,15 +36,15 @@
     border: 1px solid rgba(0,0,0,.125);
   }
   
-  .card-red {
+  #blackjack .card-red {
     color: red;
   }
   
-  .cards {
+  #blackjack .cards {
     margin: 0 auto;
   }
   
-  .input-bet {
+  #blackjack .input-bet {
     display: flex;
     justify-content: center;
   }

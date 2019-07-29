@@ -26,7 +26,7 @@ export default class About extends React.Component{
           </div>
           {/* About Section Button */}
           <div className="text-center mt-4" style={{paddingBottom: '50px'}}>
-            <a className="btn btn-xl btn-outline-light " href="https://startbootstrap.com/themes/freelancer/">
+            <a className="btn btn-xl btn-outline-light " href="#contact">
               Contact Me!
             </a>
           </div>
