@@ -75,7 +75,7 @@ export default class Portfolio extends Component{
                 <div className="row justify-content-center">
                   <div className="col-lg-8">
                     {/* Portfolio Modal - Title */}
-                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Cục xì ngầu ông bê lắc</h2>
+                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Dice or Die</h2>
                     {/* Icon Divider */}
                     <div className="divider-custom">
                       <div className="divider-custom-line" />
@@ -114,7 +114,7 @@ export default class Portfolio extends Component{
                 <div className="row justify-content-center">
                   <div className="col-lg-8">
                     {/* Portfolio Modal - Title */}
-                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Xì dách</h2>
+                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Blackjack</h2>
                     {/* Icon Divider */}
                     <div className="divider-custom">
                       <div className="divider-custom-line" />
@@ -152,7 +152,7 @@ export default class Portfolio extends Component{
                 <div className="row justify-content-center">
                   <div className="col-lg-8">
                     {/* Portfolio Modal - Title */}
-                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Tung đồng xu</h2>
+                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Heads or Tails</h2>
                     {/* Icon Divider */}
                     <div className="divider-custom">
                       <div className="divider-custom-line" />
@@ -161,8 +161,6 @@ export default class Portfolio extends Component{
                       </div>
                       <div className="divider-custom-line" />
                     </div>
-                    {/* Portfolio Modal - Image */}
-                    <img className="img-fluid rounded mb-5" src="img/portfolio/circus.png" alt="" />
                     {/* Portfolio Modal - Text */}
                     <Flip/>
                     <button className="btn btn-primary mt-4" href="#" data-dismiss="modal">

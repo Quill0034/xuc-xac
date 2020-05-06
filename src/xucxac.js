@@ -6,34 +6,47 @@ import five from "./assets/five.png";
 import six from "./assets/six.png";
 
 import React, { Component } from "react"; 
+import ReactTimeout from 'react-timeout';
 import './style/App.css';
 
-export default class Xucxac extends Component {
+class Xucxac extends Component {
   state ={
     numberOfDice: null,
     rolls: [],
-    rollSum: null
+    rollSum: null,
+    on: true
   };
-
+  
+  toggle = () => {
+    this.setState({ on: !this.state.on })
+  }
   diceRoll = numberOfDice => {
+    this.setState({
+      on: false
+    });
     let rolls = [];
     let rollSum = 0;
     for (let i = 0; i < numberOfDice; i++){
       rolls[i] = Math.floor(Math.random() * 6) + 1;
       rollSum += rolls[i];
     }
+    
     this.setState({
       numberOfDice,
       rolls,
       rollSum
     });
+    this.props.setTimeout(this.toggle, 300)
   };
+
+  
+
   render() {
     return (
 
       <div className="small-card">
         <div className="buttons">
-        {[1, 2, 3, 4, 5].map(number => {
+        {[1, 2, 3, 4].map(number => {
             let text = number === 1? "die" : "dice";
             return (
               <button
@@ -46,17 +59,17 @@ export default class Xucxac extends Component {
             );
           })}
           </div>
-          <div>
+          <div className= {this.state.on ? 'appear' : 'disappear'}>
           {
             this.state.rolls.map((roll, index) => <DiceImage roll={roll} key= {index} />) 
           }
           </div>
-          <div>
+          <div className= {this.state.on ? 'appear' : 'disappear'}>
           {
             this.state.numberOfDice ? (
               
               <h2>
-                Tổng điểm: <span className="sum">{this.state.rollSum}</span>
+                Total: <span className="sum">{this.state.rollSum}</span>
                 / {" "}
                 {this.state.numberOfDice * 6}
               </h2>
@@ -86,3 +99,4 @@ const DiceImage = ({ roll }) => {
     return <img className="dice-image" src={six} alt="6" />;
   }
 };
+export default ReactTimeout(Xucxac)

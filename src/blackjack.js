@@ -64,7 +64,7 @@ export default class Blackjack extends Component {
             message: null
           });
         } else {
-          this.setState({ message: 'Hết tiền cmnr! nhấn Bắt đầu chơi để chơi lại' });
+          this.setState({ message: 'Game over! You are broke! Press start over to play a new game!' });
         }
       } else {
         const deck = this.generateDeck();
@@ -95,9 +95,9 @@ export default class Blackjack extends Component {
       const currentBet = this.state.inputValue;
   
       if (currentBet > this.state.wallet) {
-        this.setState({ message: 'Không đủ tiền!' });
+        this.setState({ message: 'Insufficient funds to bet that amount' });
       } else if (currentBet % 1 !== 0) {
-        this.setState({ message: 'Đặt số chẵn thôi!!!' });
+        this.setState({ message: 'Please bet whole number only' });
       } else {
         // Deduct current bet from wallet
         const wallet = this.state.wallet - currentBet;
@@ -114,15 +114,15 @@ export default class Blackjack extends Component {
           player.count = this.getCount(player.cards);
   
           if (player.count > 21) {
-            this.setState({ player, gameOver: true, message: 'Ngoác cmnr!' });
+            this.setState({ player, gameOver: true, message: 'BUST!' });
           } else {
             this.setState({ deck: updatedDeck, player });
           }
         } else {
-          this.setState({ message: 'Đặt cược đê.' });
+          this.setState({ message: 'Please place bet first!' });
         }
       } else {
-        this.setState({ message: 'Hết tiền cmnr! nhấn bắt đầu chơi để chơi lại.' });
+        this.setState({ message: 'Game over! Press start over to play a new game!' });
       }
     }
     
@@ -180,7 +180,7 @@ export default class Blackjack extends Component {
             dealer,
             wallet: this.state.wallet + this.state.currentBet * 2,
             gameOver: true,
-            message: 'Cái ngoác cmnr! Bạn thắng'
+            message: 'Dealer bust! You win'
           });
         } else {
           const winner = this.getWinner(dealer, this.state.player);
@@ -188,10 +188,10 @@ export default class Blackjack extends Component {
           let message;
           
           if (winner === 'dealer') {
-            message = 'Máy thắnng...';
+            message = 'Dealer wins...';
           } else if (winner === 'player') {
             wallet += this.state.currentBet * 2;
-            message = 'Chúc mừng! Bạn đã thắng';
+            message = "Congratulation! You've won!";
           } else {
             wallet += this.state.currentBet;
             message = 'Push.';
@@ -206,7 +206,7 @@ export default class Blackjack extends Component {
           });
         } 
       } else {
-        this.setState({ message: 'Thua cmnr! .' });
+        this.setState({ message: 'Game over! Press start over to play a new game ' });
       }
     }
     
@@ -262,33 +262,33 @@ export default class Blackjack extends Component {
           <div className="row">
         <div className="col-md-6">
           <div className="buttons">
-            <button className="btn btn-outline-success" onClick={() => {this.startNewGame()}}>Bắt đầu chơi</button>
-            <button className="btn btn-outline-info" onClick={() => {this.hit()}}>Rút Bài</button>
-            <button className="btn btn-outline-primary" onClick={() => {this.stand()}}>Dừng</button>
+            <button className="btn btn-outline-success" onClick={() => {this.startNewGame()}}>Start over</button>
+            <button className="btn btn-outline-info" onClick={() => {this.hit()}}>Hit</button>
+            <button className="btn btn-outline-primary" onClick={() => {this.stand()}}>Stand</button>
           </div>
           
-          <p>Tiền trong ví: ${ this.state.wallet }</p>
+          <p>Wallet: ${ this.state.wallet }</p>
           {
             !this.state.currentBet ? 
             <div className="input-bet">            
               <form>
                 <input type="number" name="bet" placeholder="" value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
               </form>
-              <button className="btn btn-outline-dark" onClick={() => {this.placeBet()}}>Đặt Cược</button>
+              <button className="btn btn-outline-dark" onClick={() => {this.placeBet()}}>Place bet</button>
             </div>
             : null
           }
           {
             this.state.gameOver ?
             <div className="buttons">
-              <button className="btn btn-outline-info" onClick={() => {this.startNewGame('continue')}}>Chơi tiếp</button>
+              <button className="btn btn-outline-info" onClick={() => {this.startNewGame('continue')}}>Continue</button>
             </div>
             : null
           }
           <p className="highlight">{ this.state.message }</p>
           </div>
           <div className="col-md-6">
-          <p>Bạn đang có { this.state.player.count } điểm</p>
+          <p>Your hand: { this.state.player.count } Score</p>
           <table className="cards">
             <tbody>
             <tr>
@@ -299,7 +299,7 @@ export default class Blackjack extends Component {
             </tbody>
           </table>
           
-          <p style={{marginTop:'1.5rem'}}>Máy đang có { this.state.dealer.count } điểm</p>
+          <p style={{marginTop:'1.5rem'}}>Dealer's hand: { this.state.dealer.count } score</p>
           <table className="cards">
             <tbody>
             <tr>
@@ -312,7 +312,7 @@ export default class Blackjack extends Component {
           
           
           </div>
-          <button className="portfolio-item mx-auto btn-info" data-toggle="modal" data-target="#rules">luật chơi</button>
+          <button className="portfolio-item mx-auto btn-info" data-toggle="modal" data-target="#rules">Rule</button>
           <div className="portfolio-modal modal fade" id="rules" tabIndex={-1} role="dialog" aria-labelledby="rules" aria-hidden="true">
             <div className="modal-dialog modal-xl" role="document">
               <div className="modal-content"  >
@@ -326,7 +326,7 @@ export default class Blackjack extends Component {
                     <div className="row justify-content-center">
                       <div className="col-lg-8">
                         {/* Portfolio Modal - Title */}
-                        <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Luật Chơi</h2>
+                        <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Rule</h2>
                         {/* Icon Divider */}
                         <div className="divider-custom">
                           <div className="divider-custom-line" />
@@ -338,11 +338,20 @@ export default class Blackjack extends Component {
                         {/* Portfolio Modal - Image */}
                         <img className="img-fluid rounded mb-5" src={blackjack} alt="" />
                         {/* Portfolio Modal - Text */}
-                        <p className="mb-5">Trò chơi blackjack được xử lý với sáu cỗ bài (để ngăn đếm thẻ) và sau mỗi ván bài (hoặc một số tay bài), các lá bài được xáo trộn lại.
-
-                          Nhà cái phải tiếp tục rút thẻ nếu giá trị của hai thẻ của anh ta là 17 điểm trở xuống, trong khi người chơi có thể dừng lại bất cứ lúc nào.
-
-                          Người chơi có thể chia các thẻ của mình khi xử lý các thẻ có cùng giá trị (ví dụ: 6-6 hoặc J-Q), nhân đôi cơ hội của mình để chơi ván bài cụ thể đó. Ách chia chỉ nhận được một thẻ bổ sung.
+                        <p className="mb-5">The goal of blackjack is to beat the dealer's hand without going over 21.
+Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.
+Each player starts with two cards, one of the dealer's cards is hidden until the end.
+To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn.
+If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
+If you are dealt 21 from the start (Ace & 10), you got a blackjack.
+Blackjack usually means you win 1.5 the amount of your bet. Depends on the casino.
+Dealer will hit until his/her cards total 17 or higher.
+Doubling is like a hit, only the bet is doubled and you only get one more card.
+Split can be done when you have two of the same card - the pair is split into two hands.
+Splitting also doubles the bet, because each new hand is worth the original bet.
+You can only double/split on the first move, or first move of a hand created by a split.
+You cannot play on two aces after they are split.
+You can double on a hand resulting from a split, tripling or quadrupling you bet.
                           </p>
                         <button className="btn btn-primary mt-4" href="#" data-dismiss="modal">
                           <i className="fas fa-times fa-fw" />

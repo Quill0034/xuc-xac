@@ -14,7 +14,9 @@ class Flip extends Component{
         };
       }
 
-
+componentWillUnmount() {
+  this.setState({click: 0})
+}
     coinToss = () => {
         // This function will randomly return either 'heads' or 'tails'.
         this.setState({ click: Math.random() });
@@ -22,45 +24,42 @@ class Flip extends Component{
 
     handleClick = (e) => {
         this.setState({ click: 0 })
-        this.props.setTimeout(this.coinToss, 500) // call the `toggle` function after 5000ms
+        this.props.setTimeout(this.coinToss, 300) // call the `toggle` function after 5000ms
       }
       
     render() {
 
-        let appear = "appear";
-        let disappear = "disappear";
         let img;
-
-        if (this.state.click !== 0){
-            appear = "disappear";
-            disappear = "appear";
+        let logo;
+        if (this.state.click === 0){
+            logo = <>
+            <img src={flip} alt="flip"/>
+            </>
         }
+        else { logo = null }
 
-        if ( this.state.click < 0.5) { 
+        if ( this.state.click < 0.5 && this.state.click !== 0) { 
             img = <>
-            <h1>Mặt ngửa</h1>
             <img src={head} alt="head"/>
             </>
             
-        } else {
+        } else if (this.state.click >= 0.5) {
             img = <>
-             <h1>Mặt xấp</h1>
             <img src={tail} alt="tail"/>
             </>
         }
-          
+          console.log(this.state.click);
       return (
-  
-        <div>
-        <img src={flip} alt="flip" className={appear} style={{margin: '15px auto'}}/>
-        <div className={disappear}>
+        <>
         <div style={{margin: '15px auto'}}>
+          {logo}
         {img}
         </div>
         
-        </div>
+        <div>
         <button  onClick={this.handleClick} className="btn btn-success">click to flip the coin</button>
       </div>
+      </>
       );
     }
 }
